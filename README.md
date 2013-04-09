@@ -14,21 +14,52 @@ SISTEMA DE RESERVACIONES EN LINEA
 	El proyecto a manejar es un sistema de reservaciones de aulas y auditorios para la División de Electrónica y Computación, 
 	el cual se realiza bajo la supervisión y encargo del coordinador de Ing. En Computación.
 
-	El proyecto inicia con un sistema alojado en la página del servidor de la División:
-	alanturing.cucei.udg.mx/divec
+	Se tiene una estructura tipo mvc ( modelo vista controlador ) con:
+		
+		Controladores
+			*estándar
+			*usuario
+			*salones
+			*reservacion
+		
+		Modelos
+			*usuario
+			*salon
+			*reservacion
+		
+		Vistas
+			*usuario
+			*salon
+			*reservacion
 
-		*Acceder al calendario actual de ciclo
-		*Requiere un usuario y contraseña para ingresar al sistema 
-		distinguiendo usuarios entre maestros, alumnos, administrativos e invitados.
-
-		*Una vez autenticado el usuario y la contraseña comparándolo con los registros de la base de datos se muestra la pantalla 
-		de reservaciones.
-
+	
+	El controlador estándar tiene los datos para el login y el inicio de la sesión, así como el logout y la destrucción de la sesión
+	Es el controlador que se manda llamar por default si no se especifica algún otro.
+	
+	Se tiene un modelo por cada clase realizada, a excepción del modelo 'usuarios' que incluye la clase de las sesiones también
+	
+	Se tiene una vista por cada clase, y al igual que el modelo, las sesiones van incluídas en la vista de 'usuarios'
+	
+	
+	
 BASE DE DATOS
 
 	La base de datos es centralizada, unida a la base de datos de otros sistemas de la división a la cual no se pueden hacer 
 	mayores modificaciones debido a la perdida de integridad en otros sistemas. Está estructurada en mysql con phpmyadmin 
 	como gestor de administración.
+	
+		Tablas
+			*alumno
+			*maestro
+			*usuario
+			*reservacion
+			*sesion_alumno
+			*sesion_maestro
+			
+		Vistas
+			*usuario (de alumno y maestro)
+			*sesion_usuario (de sesion_alumno y sesion_maestro)
+	
 	
 HACER UNA RESERVACION
 
