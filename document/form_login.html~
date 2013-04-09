@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+</head>
+<body>
+	<table>
+		<form action="submit" method="get" enctype="text/plain">
+		<tr>
+			<td>Usuario:</td>
+			<td><input type="text" name="user"/><br></td>
+		</tr>
+		<tr>
+			<td>Contraseña: </td>
+			<td><input type="password" name="pass"/><br>	</td>
+		</tr>
+		</form>
+	</table>
+	
+		<!--Usuario:    <input type="text" name="user"/><br>-->
+		<!--Contraseña: <input type="password" name="pass"/><br>	-->
+	
+</body>
+</html>
