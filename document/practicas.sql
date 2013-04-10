@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 10-04-2013 a las 00:12:33
+-- Tiempo de generación: 10-04-2013 a las 00:19:20
 -- Versión del servidor: 5.5.29
 -- Versión de PHP: 5.3.10-1ubuntu3.6
 
@@ -35,16 +35,6 @@ CREATE TABLE IF NOT EXISTS `alumno` (
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `alumno`
---
-
-INSERT INTO `alumno` (`codigo`, `carrera`, `nombre`, `apellido`, `flag`) VALUES
-('1', 'INF', 'PRUEBA', 'UNO', 0),
-('2', 'INF', 'PRUEBA', 'DOS', 0),
-('3', 'INF', 'PRUEBA', 'TRES', 0),
-('7', 'COM', 'alumno7', 'prueba7', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -60,15 +50,6 @@ CREATE TABLE IF NOT EXISTS `maestro` (
   `flag` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `maestro`
---
-
-INSERT INTO `maestro` (`codigo`, `nombre`, `apellido`, `rol`, `correo`, `flag`) VALUES
-('0000002', 'maestro', 'prueba', 0, 'random', 0),
-('0000003', 'maestro tres', 'prueba tres', 0, 'qwert', 0),
-('0000004', 'maestro cuatro ', 'prueba cuatro', 0, 'qwerty', 0);
 
 -- --------------------------------------------------------
 
@@ -90,15 +71,6 @@ CREATE TABLE IF NOT EXISTS `reservar` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
---
--- Volcado de datos para la tabla `reservar`
---
-
-INSERT INTO `reservar` (`id`, `salon`, `espacios_reservados`, `fecha_inicio`, `fecha_final`, `hora_inicio`, `hora_final`, `usuario`, `motivo`) VALUES
-(1, 1, 0, '2013-04-16', '2013-04-17', '12:00:00', '14:00:00', '2', 'random'),
-(2, 1, 0, '2013-04-15', '2013-04-16', '14:00:00', '16:00:00', '1', 'random2'),
-(3, 1, 0, '2013-04-15', '2013-04-16', '14:00:00', '16:00:00', '1', 'random3');
-
 -- --------------------------------------------------------
 
 --
@@ -117,13 +89,6 @@ CREATE TABLE IF NOT EXISTS `salon` (
   UNIQUE KEY `Edificio` (`edificio`,`aula`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Volcado de datos para la tabla `salon`
---
-
-INSERT INTO `salon` (`id`, `edificio`, `aula`, `cupo`, `nombre`, `descripcion`, `espacios`) VALUES
-(1, 'DED', 'AUD', 35, 'pruebassalon', 'PRUEBA', 35);
-
 -- --------------------------------------------------------
 
 --
@@ -138,16 +103,6 @@ CREATE TABLE IF NOT EXISTS `sesion_alumno` (
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `sesion_alumno`
---
-
-INSERT INTO `sesion_alumno` (`codigo`, `pass`, `permisos`, `activo`) VALUES
-('000000001', 'qwerty', 1, 1),
-('000000002', 'qwerty', 1, 1),
-('000000003', 'qwerty', 1, 1),
-('000000007', 'qw', 1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -161,13 +116,6 @@ CREATE TABLE IF NOT EXISTS `sesion_maestro` (
   `activo` tinyint(1) NOT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `sesion_maestro`
---
-
-INSERT INTO `sesion_maestro` (`codigo`, `pass`, `permisos`, `activo`) VALUES
-('0000001', 'maestro1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -207,14 +155,6 @@ CREATE TABLE IF NOT EXISTS `usuario_practicas` (
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `id_usuario` (`id_usuario`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
-
---
--- Volcado de datos para la tabla `usuario_practicas`
---
-
-INSERT INTO `usuario_practicas` (`id_usuario`, `nombre`, `apellido`, `edad`) VALUES
-(1, 'karina', 'primero', 19),
-(15, 'Nina', 'Segundo', 30);
 
 -- --------------------------------------------------------
 
