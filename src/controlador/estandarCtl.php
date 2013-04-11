@@ -32,9 +32,13 @@ class estandarCtl {
       $codigo = $conexion->limpiarVariable($_REQUEST['code']);
       $contrasena = $conexion->limpiarVariable($_REQUEST['pass']);
 
-     if (preg_match("/^(A-Z){0,1}\w{6,9}$/", $codigo)) {
-      echo "Si entro en el REGEX";
-     }
+     if (preg_match("/^[A-Z0-9][0-9]{6,8}$/", $codigo)) {
+      echo "Si entro en el REGEX codigo____.";
+     }//if regex codigo
+
+     if (preg_match("/^[\w][\s|\w]{5,}$/", $contrasena)) {
+      echo "si entro en el regex contraseña___.";
+     }//if regex contraseña
 
 
       switch($action){
@@ -43,7 +47,7 @@ class estandarCtl {
           echo "login!";
 
           $usuario = $this->modelo->buscar($codigo,$contrasena);
-          //print_r($alumnos_array);
+
         break;
         
         default :
@@ -52,8 +56,9 @@ class estandarCtl {
     }//if isset
 
      if (is_array($usuario) || is_object($usuario)) {
+        $_SESSION['activo']= true;
        //Incluir la vista
-       include('vista/usuarioVst.php');
+       include('../src/vista/usuarioVst.php');
      }
      else {
        //Se manda llamar la lista de errores
