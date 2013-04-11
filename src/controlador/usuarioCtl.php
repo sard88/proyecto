@@ -10,7 +10,7 @@
 
 	   	function esAlumno () {
 	   		if (isset($_REQUEST['accion'])) {
-	   			if(strlen($_REQUEST['codigo'])==1)
+	   			if(strlen($_REQUEST['codigo'])==9)
 	   				return true;
 	   		}//si hay request
 	   		return false;

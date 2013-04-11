@@ -11,11 +11,12 @@
 			if (!$conexion->conectar())
 				die('FALLO'.$conexion->errno.':'.$conexion->error);
 
-			$consulta = "SELECT * FROM sesion_usuario
-					 WHERE codigo = '$usuario'
-					 AND pass='$contrasena'";
+			$consulta = "SELECT * FROM  usuario, sesion_usuario 
+						 WHERE usuario.codigo = '$usuario'  
+						 AND sesion_usuario.codigo='$usuario' 
+						 AND sesion_usuario.pass='$contrasena'";
 
-			var_dump($consulta);
+			//var_dump($consulta);
 
 			$resultado = $conexion -> ejecutarConsulta($consulta);
 
@@ -26,9 +27,6 @@
 			else {
 
 				$conexion -> cerrar();
-				if(is_object($resultado)) {
-					
-				}
 				return $resultado;
 			}//else
 

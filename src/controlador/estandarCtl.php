@@ -33,20 +33,27 @@ class estandarCtl {
       $contrasena = $conexion->limpiarVariable($_REQUEST['pass']);
 
      if (preg_match("/^[A-Z0-9][0-9]{6,8}$/", $codigo)) {
-      echo "Si entro en el REGEX codigo____.";
+      echo "RGXC_|";
      }//if regex codigo
 
      if (preg_match("/^[\w][\s|\w]{5,}$/", $contrasena)) {
-      echo "si entro en el regex contraseña___.";
+      echo "_RGXT";
      }//if regex contraseña
 
 
       switch($action){
 
         case "login" :
-          echo "login!";
 
           $usuario = $this->modelo->buscar($codigo,$contrasena);
+          //print_r($usuario);
+
+          $_SESSION['codigo']=$usuario[0]['codigo'];
+          $_SESSION['nombre']=$usuario[0]['nombre'];
+          $_SESSION['apellido']=$usuario[0]['apellido'];
+          $_SESSION['permisos']=$usuario[0]['permisos'];
+
+          //var_dump($_SESSION);
 
         break;
         
@@ -58,7 +65,7 @@ class estandarCtl {
      if (is_array($usuario) || is_object($usuario)) {
         $_SESSION['activo']= true;
        //Incluir la vista
-       include('../src/vista/usuarioVst.php');
+       //include('../src/vista/usuarioVst.php');
      }
      else {
        //Se manda llamar la lista de errores

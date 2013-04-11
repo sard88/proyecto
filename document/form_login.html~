@@ -2,9 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title></title>
+<title>Inicio de Sesion</title>
 </head>
 <body>
+	<h1>Por favor inicie sesion aquí: </h1><a id="titulo"></a>
 	<table>
 		<form action="submit" method="get" enctype="text/plain">
 		<tr>
@@ -17,9 +18,55 @@
 		</tr>
 		</form>
 	</table>
-	
+		
 		<!--Usuario:    <input type="text" name="user"/><br>-->
 		<!--Contraseña: <input type="password" name="pass"/><br>	-->
-	
+		
+		<!--Enlace a otra pagina-->	
+		<h2> Ir a Google </h2>	
+		<a href="http://google.com" target="_blank">Google!</a></br>
+		
+		<h3>Otro Archivo</h3>
+		<!--Enlace a otro archivo local -->
+		<a href="ejemplo.html">Otra practica</a></br>		
+				
+		<h4>Enviar correo</h4>
+		<!--Enlace para enviar un correo -->
+		<a href="mailto:joli.princesse@gmail.com">Correo</a>
+		
+		<pre>
+			Hey-o here comes a danger up in this club
+			When we get started and we ain't gonna stop
+			We gonna turn it out till it gets too hot
+			Everybody sing, Hey-O
+			Tell'em turn it up till they can't no more
+			Lets get this thing shakin like a disco ball
+			This is your last warning, a courtesy call
+			
+			Hey-O, here comes a danger up in this club
+			When we get started and we ain't gonna stop
+			We gonna turn it out till it gets too hot
+			Everybody sing, Hey-O
+			Tell'em turn it up till they can't no more
+			Lets get this thing shakin' like a disco ball
+			This is your last warning, a courtesy call
+			
+			I am not afraid of the storm that comes my way
+			When it hits it shakes me to the core
+			And makes me stronger than before
+			It?s not a question about trust
+			But will you stand with us
+			Can you feel it, make it real and
+			
+			I think it might wash away tonight
+			Awaken from this never ending fight
+			It takes more than meets the eye
+			This war we're fighting is not just rotting		
+		</pre>		
+		
+		<!-- Enlace Ancla para la misma pagina -->
+		<a href="#titulo">Ir a inicio de sesion</a>
+		
+		
 </body>
 </html>
