@@ -1,6 +1,8 @@
 <?php
 	class alumnoMdl {
 
+		public $alumno;
+
 		function alta ($codigo, $carrera, $nombre, $apellido, $flag, $pass, $permisos, $activo) {
 
 

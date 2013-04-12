@@ -1,6 +1,8 @@
 <?php
 	class maestroMdl {
 
+		public $maestro;
+		
 		function alta ($codigo, $correo, $nombre, $apellido, $rol, $flag, $pass, $permisos, $activo) {
 
 

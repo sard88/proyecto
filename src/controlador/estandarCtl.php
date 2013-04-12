@@ -19,6 +19,11 @@ class estandarCtl {
     if (isset($_REQUEST['accion'])) {
 
      session_start();
+
+    if( isset($_SESSION['codigo']) ){
+      //Ya existe la sesion y no debe intentar hacer login
+    }
+
      $action = $_REQUEST['accion'];
 
      require_once ('../src/modelo/dbdata.inc');

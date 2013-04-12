@@ -2,10 +2,15 @@
 	
 	class usuarioMdl {
 
+		public $usuario;
+
 		function buscar($usuario,$contrasena) {
 
 			require ('dbdata.inc');
 			require_once ('dbClass.php');
+			require('usuarioClass.php');
+
+			$usuario = new Usuario();
 
 			$conexion = new DB ($host, $user, $pass, $bd);
 			if (!$conexion->conectar())

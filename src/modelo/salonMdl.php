@@ -1,6 +1,8 @@
 <?php
 	class salonMdl {
 
+		public $salon;
+
 		function alta ($id, $edificio, $aula, $cupo, $nombre, $descripcion, $espacios) {
 
 

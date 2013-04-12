@@ -1,6 +1,8 @@
 <?php
 	class reservacionMdl {
 
+		public $reservacion;
+
 		function alta ($id, $salon, $fecha_inicio, $fecha_final, $hora_inicio, $hora_final, $usuario, $motivo) {
 
 
