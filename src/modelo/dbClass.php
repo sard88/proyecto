@@ -2,11 +2,11 @@
 
 class DB {
 
-	public $host;
-	public $user;
-	public $pass; 
-	public $bdrr;
-	public $cnx;
+	private $host;
+	private $user;
+	private $pass; 
+	private $bdrr;
+	private $cnx;
 
 	private static $instance;
 
