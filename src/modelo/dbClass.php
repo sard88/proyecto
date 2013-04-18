@@ -8,14 +8,32 @@ class DB {
 	public $bdrr;
 	public $cnx;
 
+	private static $instance;
+
 
 	//CAMBIAR BASE DE DATOS DE practicas (bd) a RESERVACION (bdr) EN ESTA LINEA
-	function __construct ($host, $user, $pass, $bd) {
+	private function __construct ($host, $user, $pass, $bd) {
 		$this->host = $host;
 		$this->user = $user;
 		$this->pass = $pass;
 		$this->bd = $bd;
 	}//constructor
+
+	public static function singleton() 
+    {
+        if (!isset(self::$instance)) {
+            $c = __CLASS__;
+            self::$instance = new $c;
+        }
+
+        return self::$instance;
+    }//singleton
+
+    // Evita que el objeto se pueda clonar
+    public function __clone()
+    {
+        trigger_error('Clone is not allowed.', E_USER_ERROR);
+    }//clone
 
 	//REGRESA TRUE OR FALSE
 	function conectar () {
