@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -6,6 +7,11 @@ switch($_REQUEST['controlador'])
 	case 'usuario': 
 		include('../src/controlador/usuarioCtl.php');
 		$controlador = new usuarioCtl();
+	break;
+
+	case 'alumno':
+		include('../src/controlador/alumnoCtl.php');
+		$controlador = new alumnoCtl();
 	break;
 
 	case 'salon':
